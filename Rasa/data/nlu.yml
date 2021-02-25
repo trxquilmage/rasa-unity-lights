@@ -1,0 +1,182 @@
+version: "2.0"
+
+nlu:
+- intent: licht_einfaerben
+  examples: |
+    - kannst du alle [rgbLichter](licht) [rot](farbe) machen?
+    - ich will alle [rgb Lampen]{"entity": "licht", "value": "rgbLichter"} [rot](farbe) haben.
+    - mach die [rgb Lichter]{"entity": "licht", "value": "rgbLichter"} [rot](farbe).
+    - gib mir [rote]{"entity": "farbe", "value": "rot"} [rgbLichter](licht).
+    - faerb die [rgbLichter](licht) in [roter]{"entity": "farbe", "value": "rot"} Farbe ein.
+    - bitte faerb die [rgbLichter](licht) [rot](farbe).
+    - cool waere [rotes]{"entity": "farbe", "value": "rot"} [rgb Licht]{"entity": "licht", "value": "rgbLichter"}
+    - ein [rotes]{"entity": "farbe", "value": "rot"} [rgb Licht]{"entity": "licht", "value": "rgbLichter"}
+    - waeren [rote]{"entity": "farbe", "value": "rot"} [rgb Lichter]{"entity": "licht", "value": "rgbLichter"} okay?
+    - pack ein bisschen mehr [rot](farbe) auf die [rgbs]{"entity": "licht", "value": "rgbLichter"}
+    - hallo mein bastard, kannst du [licht zwei]{"entity": "licht", "value": "2"} [gelb](farbe) machen?
+    - give me some cute [pink](farbe) [rgbs]{"entity": "licht", "value": "rgbLichter"} to work with ok <3
+    - mach mal die [rgbs]{"entity": "licht", "value": "rgbLichter"} [pinker]{"entity": "farbe", "value": "pink"}
+    - mach mal [violette]{"entity": "farbe", "value": "lila"} [bewegungslichter]{"entity": "licht", "value": "beweglicheLichter"}
+    - mach mir mal ein [gelbes]{"entity": "farbe", "value": "gelb"} [rgb licht]{"entity": "licht", "value": "rgbLichter"} an
+- intent: licht_intensitaet_hoch
+  examples: |
+    - mach das [Licht eins]{"entity": "licht", "value": "1"} heller.
+    - mehr beleuchtung auf das [erste Licht]{"entity": "licht", "value": "1"}.
+    - hau fuer [Licht 1]{"entity": "licht", "value": "1"} die Intensitaet nach oben
+    - kannst du [Licht Nummer 1]{"entity": "licht", "value": "1"} heller machen?
+    - koennen wir [Licht1]{"entity": "licht", "value": "1"} super hell machen
+    - mehr licht von [Licht 1]{"entity": "licht", "value": "1"}
+    - mach die [bewegbaren lichter]{"entity": "licht", "value": "beweglicheLichter"} heller
+    - kannst du die [beweglichen leuchten]{"entity": "licht", "value": "beweglicheLichter"} richtig hell machen?
+    - bitte mach die [buehne]{"entity": "licht", "value": "alle"} mal richtig nervig hell
+- intent: licht_intensitaet_runter
+  examples: |
+    - mach das [Licht zwei]{"entity": "licht", "value": "2"} dunkler.
+    - weniger beleuchtung auf das [zweite Licht]{"entity": "licht", "value": "2"}.
+    - hau fuer [Licht 2]{"entity": "licht", "value": "2"} die Intensitaet nach unten
+    - kannst du [Licht Nummer 2]{"entity": "licht", "value": "2"} dunkler machen?
+    - koennen wir [Licht2]{"entity": "licht", "value": "2"} super schwach machen
+    - weniger licht von [Licht 2]{"entity": "licht", "value": "2"}
+    - mach [licht 2]{"entity": "licht", "value": "2"} dunkler
+    - hewwo koennen wir ein bisschen weniger licht auf der [buehne]{"entity": "licht", "value": "alle"} bekommen?
+    - kannst du die [bewegungsleuchten]{"entity": "licht", "value": "beweglicheLichter"} dunkeler machen?
+- intent: licht_aus
+  examples: |
+    - schalte [alle Lichter]{"entity": "licht", "value": "alle"} aus
+    - mach [den raum]{"entity": "licht", "value": "alle"} dunkel
+    - keine Licht mehr auf der [Buehne]{"entity": "licht", "value": "alle"}
+    - [alles]{"entity": "licht", "value": "alle"} ausschalten
+    - [alle Lichter]{"entity": "licht", "value": "alle"} weg
+    - wir brauchen keine lichter mehr auf der [Buehne]{"entity": "licht", "value": "alle"}
+    - schalte [alles]{"entity": "licht", "value": "alle"} ab
+    - wie wäre es wenn du die [rgb lichter]{"entity": "licht", "value": "rgbLichter"} aus machst
+    - wie waere es wenn du die [rgb lichter]{"entity": "licht", "value": "rgbLichter"} aus machen wuerdest
+    - mach bitte einfach [alles]{"entity": "licht", "value": "alle"} aus
+    - absolut gar kein licht von [licht zwei]{"entity": "licht", "value": "2"} bitte
+- intent: say_color
+  examples: |
+    - [weiss](farbe)
+    - [grau](farbe)
+    - [schwarz](farbe)
+    - [rot](farbe)
+    - [orange](farbe)
+    - [gelb](farbe)
+    - [gruen](farbe)
+    - [blau](farbe)
+    - [pink](farbe)
+    - [lila](farbe)
+    - [violett]{"entity": "farbe", "value": "lila"}
+- intent: say_light
+  examples: |
+    - [rgbLichter](licht)
+    - [beweglicheLichter](licht)
+    - [alle](licht)
+    - [1](licht)
+    - [2](licht)
+- synonym: rgbLichter
+  examples: |
+    - rgb Lampen
+    - rgb Lichter
+    - rgb Licht
+    - rgbs
+    - rgb lichter
+    - r g b
+    - r g b lichter
+- synonym: rot
+  examples: |
+    - rote
+    - roter
+    - rotes
+    - roeter
+    - roetlich
+- synonym: '2'
+  examples: |
+    - licht zwei
+    - Licht zwei
+    - zweite Licht
+    - Licht 2
+    - Licht Nummer 2
+    - Licht2
+    - licht 2
+- synonym: pink
+  examples: |
+    - pinker
+    - magenta
+    - pinke
+    - pinkes
+- synonym: '1'
+  examples: |
+    - Licht eins
+    - erste Licht
+    - Licht 1
+    - Licht Nummer 1
+    - Licht1
+- synonym: beweglicheLichter
+  examples: |
+    - bewegbaren lichter
+    - beweglichen leuchten
+    - bewegungsleuchten
+    - bewegende Lichter
+    - Bewegungsleuchte
+    - bewegliches licht
+    - moving light
+    - bewegende Lampe
+    - bewegliche Leuchten
+    - Bewegungsleuchten
+    - bewegbare lichter
+    - moving lights
+    - bewegende Lampen
+- synonym: alle
+  examples: |
+    - buehne
+    - alle Lichter
+    - den raum
+    - Buehne
+    - alles
+    - die lichter
+- synonym: lila
+  examples: |
+    - violett
+- synonym: weiss
+  examples: |
+    - weisse
+    - weisser
+    - weisses
+    - weisslich
+- synonym: grau
+  examples: |
+    - graue
+    - grauer
+    - graues
+    - graeuer
+    - graeulich
+- synonym: schwarz
+  examples: |
+    - schwarze
+    - schwarzer
+    - schwarzes
+    - schwaerzer
+    - schwaerzlich
+- synonym: orange
+  examples: |
+    - oranger
+    - oranges
+- synonym: gelb
+  examples: |
+    - gelbe
+    - gelbes
+    - gelber
+    - gelblich
+- synonym: gruen
+  examples: |
+    - gruener
+    - gruene
+    - gruenes
+    - gruenlich
+- synonym: blau
+  examples: |
+    - blaue
+    - blaues
+    - blauer
+    - blaulich
+    - blaeulich

@@ -1,0 +1,151 @@
+version: "2.0"
+
+stories:
+
+- story: licht einfaerben
+  steps:
+  - intent: licht_einfaerben
+    entities:
+    - licht: "1"
+    - farbe: "rot"
+  - slot_was_set:
+    - licht: "1"
+    - farbe: "rot"
+  - action: action_licht_einfaerben
+
+- story: intensitaet hoch
+  steps:
+  - intent: licht_intensitaet_hoch
+    entities:
+    - licht: "1"
+  - slot_was_set:
+    - licht: "1"
+  - action: action_licht_heller
+
+- story: intensitaet runter
+  steps:
+  - intent: licht_intensitaet_runter
+    entities:
+    - licht: "1"
+  - slot_was_set:
+    - licht: "1"
+  - action: action_licht_dunkler
+
+- story: licht aus
+  steps:
+  - intent: licht_aus
+    entities:
+    - licht: "1"
+  - slot_was_set:
+    - licht: "1"
+  - action: action_licht_aus
+- story: interactive_story_1
+  steps:
+  - intent: licht_einfaerben
+    entities:
+    - licht: '2'
+    - farbe: gelb
+  - slot_was_set:
+    - farbe: gelb
+  - slot_was_set:
+    - licht: '2'
+  - action: action_licht_einfaerben
+  - intent: licht_aus
+    entities:
+    - licht: rgbLichter
+  - slot_was_set:
+    - licht: rgbLichter
+  - action: action_licht_aus
+  - intent: licht_intensitaet_runter
+    entities:
+    - licht: '2'
+  - slot_was_set:
+    - licht: '2'
+  - action: action_licht_dunkler
+  - intent: licht_intensitaet_hoch
+    entities:
+    - licht: beweglicheLichter
+  - slot_was_set:
+    - licht: beweglicheLichter
+  - action: action_licht_heller
+
+- story: interactive_story_1
+  steps:
+  - intent: licht_einfaerben
+    entities:
+    - farbe: pink
+    - licht: rgbLichter
+  - slot_was_set:
+    - farbe: pink
+  - slot_was_set:
+    - licht: rgbLichter
+  - action: action_licht_einfaerben
+  - intent: licht_intensitaet_runter
+    entities:
+    - licht: alle
+  - slot_was_set:
+    - licht: alle
+  - action: action_licht_dunkler
+  - intent: licht_intensitaet_hoch
+    entities:
+    - licht: beweglicheLichter
+  - slot_was_set:
+    - licht: beweglicheLichter
+  - action: action_licht_heller
+  - intent: licht_aus
+    entities:
+    - licht: alle
+  - slot_was_set:
+    - licht: alle
+  - action: action_licht_aus
+
+- story: interactive_story_1
+  steps:
+  - intent: licht_einfaerben
+    entities:
+    - licht: rgbLichter
+    - farbe: pink
+  - slot_was_set:
+    - farbe: pink
+  - slot_was_set:
+    - licht: rgbLichter
+  - action: action_licht_einfaerben
+  - intent: licht_aus
+    entities:
+    - licht: '2'
+  - slot_was_set:
+    - licht: '2'
+  - action: action_licht_aus
+  - intent: licht_intensitaet_hoch
+    entities:
+    - licht: alle
+  - slot_was_set:
+    - licht: alle
+  - action: action_licht_heller
+  - intent: licht_intensitaet_runter
+    entities:
+    - licht: beweglicheLichter
+  - slot_was_set:
+    - licht: beweglicheLichter
+  - action: action_licht_dunkler
+
+- story: interactive_story_1
+  steps:
+  - intent: licht_einfaerben
+    entities:
+    - farbe: lila
+    - licht: beweglicheLichter
+  - slot_was_set:
+    - farbe: lila
+  - slot_was_set:
+    - licht: beweglicheLichter
+  - action: action_licht_einfaerben
+  - intent: licht_einfaerben
+    entities:
+    - farbe: gelb
+    - licht: rgbLichter
+  - slot_was_set:
+    - farbe: gelb
+  - slot_was_set:
+    - licht: rgbLichter
+  - action: action_licht_einfaerben

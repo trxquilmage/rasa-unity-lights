@@ -1,0 +1,34 @@
+version: "2.0"
+
+intents:
+- licht_einfaerben:
+    use_entities: []
+- licht_aus:
+    use_entities: []
+- licht_intensitaet_runter:
+    use_entities: []
+- licht_intensitaet_hoch:
+    use_entities: []
+- say_color:
+    use_entities: []
+- say_light:
+    use_entities: []
+entities:
+- farbe
+- licht
+slots:
+  farbe:
+    type: text
+    influence_conversation: true
+  licht:
+    type: text
+    influence_conversation: true
+actions:
+- action_licht_aus
+- action_licht_dunkler
+- action_licht_einfaerben
+- action_licht_heller
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
